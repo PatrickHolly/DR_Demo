@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Player/GameOver.gd" type="Script" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "gameOver"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="GameOver" type="ColorRect"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.215686, 0.596078, 0.509804, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 226.0
+margin_top = 86.0
+margin_right = 336.0
+margin_bottom = 100.0
+rect_scale = Vector2( 5, 5 )
+text = "End of this Demo"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 238.0
+margin_top = 200.0
+margin_right = 299.0
+margin_bottom = 218.0
+rect_scale = Vector2( 2, 2 )
+text = "Distance:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_top = -5.08626e-08
+anchor_bottom = -5.08626e-08
+margin_left = 294.0
+margin_top = 380.0
+margin_right = 427.0
+margin_bottom = 400.0
+rect_scale = Vector2( 3, 3 )
+text = "back to Main"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/gameOver = SubResource( 1 )
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

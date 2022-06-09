@@ -1,0 +1,276 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Player/Quit.gd" type="Script" id=1]
+[ext_resource path="res://Player/Start.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "StartGame"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../ColorRect2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1, 2, 5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../ColorRect2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 1027.0
+margin_bottom = 602.0
+color = Color( 0.215686, 0.596078, 0.509804, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1026.0
+margin_bottom = 601.0
+color = Color( 0.215686, 0.596078, 0.509804, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+anims/StartGame = SubResource( 1 )
+
+[node name="Label" type="Label" parent="ColorRect"]
+margin_left = 219.868
+margin_top = 46.4126
+margin_right = 308.868
+margin_bottom = 60.4126
+rect_scale = Vector2( 6, 6 )
+text = "DR Prototype"
+
+[node name="Start" type="Button" parent="ColorRect"]
+margin_left = 362.35
+margin_top = 222.0
+margin_right = 446.35
+margin_bottom = 250.0
+rect_scale = Vector2( 3, 3 )
+text = "Start"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="ColorRect"]
+margin_left = 362.762
+margin_top = 360.524
+margin_right = 445.762
+margin_bottom = 385.524
+rect_scale = Vector2( 3, 3 )
+text = "Quit"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="Label" parent="ColorRect"]
+margin_left = 867.0
+margin_top = 554.0
+margin_right = 995.0
+margin_bottom = 583.0
+text = "Created by Patrick Holly
+by Godot Engine"
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 3.1748
+margin_top = 1.5874
+margin_right = 1027.17
+margin_bottom = 601.587
+rect_pivot_offset = Vector2( 814.97, 130.413 )
+mouse_filter = 1
+color = Color( 0.215686, 0.596078, 0.509804, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Controls" type="Label" parent="ColorRect2"]
+margin_left = 341.154
+margin_top = 34.7134
+margin_right = 398.154
+margin_bottom = 48.7134
+rect_scale = Vector2( 5, 5 )
+text = "Controlls"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Keyboard" type="Label" parent="ColorRect2"]
+margin_left = 382.291
+margin_top = 128.699
+margin_right = 441.291
+margin_bottom = 142.699
+rect_scale = Vector2( 2, 2 )
+text = "Keyboard"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Controller" type="Label" parent="ColorRect2"]
+margin_left = 676.203
+margin_top = 136.238
+margin_right = 739.203
+margin_bottom = 150.238
+rect_scale = Vector2( 2, 2 )
+text = "Controller"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Acc" type="Label" parent="ColorRect2"]
+margin_left = 87.3071
+margin_top = 204.775
+margin_right = 155.307
+margin_bottom = 218.775
+rect_scale = Vector2( 2, 2 )
+text = "Accelerate"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slow" type="Label" parent="ColorRect2"]
+margin_left = 142.866
+margin_top = 284.145
+margin_right = 182.866
+margin_bottom = 298.145
+rect_scale = Vector2( 2, 2 )
+text = "Break"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Keyboard3" type="Label" parent="ColorRect2"]
+margin_left = 374.627
+margin_top = 360.939
+margin_right = 440.627
+margin_bottom = 378.939
+rect_scale = Vector2( 2, 2 )
+text = "Enter"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Keyboard2" type="Label" parent="ColorRect2"]
+margin_left = 372.222
+margin_top = 292.441
+margin_right = 438.222
+margin_bottom = 310.441
+rect_scale = Vector2( 2, 2 )
+text = "S"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Keyboard4" type="Label" parent="ColorRect2"]
+margin_left = 423.564
+margin_top = 211.244
+margin_right = 436.564
+margin_bottom = 225.244
+rect_scale = Vector2( 2, 2 )
+text = "W"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect2"]
+margin_left = 106.356
+margin_top = 361.927
+margin_right = 164.356
+margin_bottom = 375.927
+rect_scale = Vector2( 2, 2 )
+text = "DR Mode"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Keyboard5" type="Label" parent="ColorRect2"]
+margin_left = 677.82
+margin_top = 356.176
+margin_right = 743.82
+margin_bottom = 374.176
+rect_scale = Vector2( 2, 2 )
+text = "(R,R1)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Keyboard6" type="Label" parent="ColorRect2"]
+margin_left = 670.654
+margin_top = 282.917
+margin_right = 736.654
+margin_bottom = 300.917
+rect_scale = Vector2( 2, 2 )
+text = "B"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Keyboard7" type="Label" parent="ColorRect2"]
+margin_left = 723.583
+margin_top = 203.307
+margin_right = 732.583
+margin_bottom = 217.307
+rect_scale = Vector2( 2, 2 )
+text = "A"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect2"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="animation_finished" from="ColorRect/AnimationPlayer" to="ColorRect/Start" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="pressed" from="ColorRect/Start" to="ColorRect/Start" method="_on_Start_pressed"]
+[connection signal="pressed" from="ColorRect/Quit" to="ColorRect/Quit" method="_on_Quit_pressed"]

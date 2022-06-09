@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://spur gerade.png" type="Texture" id=1]
+[ext_resource path="res://Areas/Gerade.gd" type="Script" id=2]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="PlaneMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="CubeMesh" id=4]
+
+[node name="Gerade" type="Area"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0.762609, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0.921356, 0 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Haus" type="MeshInstance" parent="."]
+transform = Transform( 4, 0, 0, 0, 10, 0, 0, 0, 4, -17.6359, 9.13414, 1.10032 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="Haus2" type="MeshInstance" parent="."]
+transform = Transform( 4, 0, 0, 0, 10, 0, 0, 0, 4, 16.5046, 9.13414, 1.10032 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="PositionLeft" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.42133, 8.725 )
+
+[node name="PositionRight" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.121, 1.37631, 8.128 )
+
+[node name="FussgaengerLeft" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.81387, 1.61357, -8.80936 )
+
+[node name="FussgaengerRight" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.87502, 1.69008, -7.85023 )

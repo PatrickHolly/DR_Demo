@@ -1,0 +1,90 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Player/CollisionEnd.gd" type="Script" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "fadeIn"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="CollisionEnd" type="ColorRect"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.6, 0.180392, 0.180392, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 172.0
+margin_top = 52.0
+margin_right = 319.0
+margin_bottom = 66.0
+rect_scale = Vector2( 5, 5 )
+text = "There was an Accident!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Distance" type="Label" parent="."]
+margin_left = 210.0
+margin_top = 230.0
+margin_right = 271.0
+margin_bottom = 248.0
+rect_scale = Vector2( 2, 2 )
+text = "Distance:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_top = -5.08626e-08
+anchor_bottom = -5.08626e-08
+margin_left = 302.0
+margin_top = 408.0
+margin_right = 435.0
+margin_bottom = 428.0
+rect_scale = Vector2( 3, 3 )
+text = "back to Main"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Label" parent="."]
+margin_left = 210.0
+margin_top = 294.0
+margin_right = 271.0
+margin_bottom = 312.0
+rect_scale = Vector2( 2, 2 )
+text = "Time left:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 210.0
+margin_top = 154.0
+margin_right = 500.0
+margin_bottom = 172.0
+rect_scale = Vector2( 2, 2 )
+text = "Try to be more careful next Time!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/fadeIn = SubResource( 1 )
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
