@@ -21,6 +21,7 @@ var speed=0
 func _physics_process(delta):
 	if starttime<=0:
 		moving=true
+		visible=true
 	else:
 		starttime-=1
 	if obstacle:

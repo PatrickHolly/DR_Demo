@@ -13,6 +13,7 @@ var distance = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group("Player")
+	
 	pass # Replace with function body.
 
 func _physics_process(_delta):
@@ -34,6 +35,8 @@ func _process(_delta):
 		$Control2.gameOver()
 		
 
+
+
 func getInput():
 	if Input.is_action_pressed("faster"):
 		speed-=0.05
@@ -52,4 +55,11 @@ func _on_Area_body_entered(body):
 		$CollisionEnd.setDistance(distance)
 		$CollisionEnd.setTime(timeleft)
 		$CollisionEnd.startAnim()
+		$Camera2D.current=true
+		$FPController._on_openxr_session_ending()
+		
 	pass # Replace with function body.
+
+
+func _on_FPController_failed_initialisation():
+	$Camera.current=true

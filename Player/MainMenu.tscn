@@ -5,7 +5,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "StartGame"
-length = 6.0
+length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("../ColorRect2:modulate")
 tracks/0/interp = 1
@@ -13,7 +13,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 1, 2, 5, 6 ),
+"times": PoolRealArray( 1, 2, 3.3, 4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
@@ -43,20 +43,12 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[node name="Control" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="ViewPort" type="Control"]
 
 [node name="Background" type="ColorRect" parent="."]
 margin_right = 1027.0
 margin_bottom = 602.0
 color = Color( 0.215686, 0.596078, 0.509804, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1026.0
@@ -85,9 +77,6 @@ margin_bottom = 250.0
 rect_scale = Vector2( 3, 3 )
 text = "Start"
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Quit" type="Button" parent="ColorRect"]
 margin_left = 362.762
@@ -111,7 +100,7 @@ by Godot Engine"
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 visible = false
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color( 1, 1, 1, 0.00575662 )
 margin_left = 3.1748
 margin_top = 1.5874
 margin_right = 1027.17
@@ -119,9 +108,6 @@ margin_bottom = 601.587
 rect_pivot_offset = Vector2( 814.97, 130.413 )
 mouse_filter = 1
 color = Color( 0.215686, 0.596078, 0.509804, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Controls" type="Label" parent="ColorRect2"]
 margin_left = 341.154

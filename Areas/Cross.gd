@@ -108,7 +108,7 @@ func generateCar():
 	car.set_scale(Vector3(0.7,0.7,0.7))
 	_follow.add_child(car)
 	_follow.rotation_degrees.y=90
-
+	car.visible=false
 
 
 func setPosition(x1,z1):
